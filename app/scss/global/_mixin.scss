@@ -1,0 +1,37 @@
+@mixin sm {
+    @media (min-width: 600px) { @content; }
+}
+@mixin md {
+    @media (min-width: 900px) { @content; }
+}
+@mixin lg {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin xl {
+    @media (min-width: 1800px) { @content; }
+}
+
+@mixin for-size($size) {
+    @if $size == sm {
+      @media (min-width: 600px) { @content; }
+    } @else if $size == md {
+      @media (min-width: 900px) { @content; }
+    } @else if $size == lg {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == xl {
+      @media (min-width: 1800px) { @content; }
+    }
+}
+
+@mixin col($size) {
+    .col-#{$size} {
+        width: #{$size * 10%};
+    }
+}
+
+/*
+@include for-size(sm) {    
+    font-size: 1rem; 
+ }
+use mixin
+ */

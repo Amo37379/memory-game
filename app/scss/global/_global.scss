@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+.img-responsive {
+    width: 100%;
+}
+section,
+.section {
+    padding: 6em 0;
+}
+.txt-center {
+    text-align: center;
+}
+.d-flex {
+    display: flex;
+}
+.align-center {
+    align-items: center;
+}
+.justify-center {
+    justify-content: center;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.8;
+}
