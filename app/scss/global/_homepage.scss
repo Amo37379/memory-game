@@ -1,0 +1,82 @@
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(13px);
+    }
+    40% {
+        transform: translateX(-8px);
+    }
+    60% {
+        transform: translateX(-13px);
+    }
+    80% {
+        transform: translateX(8px);
+    }
+}
+.wrapper {
+    height: 500px;
+    width: 500px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    .cards {
+        height: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            list-style: none;
+            height: calc(100% / 4 - 10px);
+            width: calc(100% / 4 - 10px);
+            position: relative;
+            perspective: 1000px;
+
+            .front-view {
+                img {
+                    width: 25px;
+                }
+            }
+            .back-view {
+                transform: rotateY(-180deg);
+
+                img {
+                    max-width: 50px;
+                }
+            }
+            .view {
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                transition: 0.25s linear;
+                backface-visibility: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .card.shake {
+            animation: shake 0.3s ease-in-out;
+        }
+        .card.flip {
+            .front-view {
+                transform: rotateY(180deg);
+            }
+            .back-view {
+                transform: rotateY(0);
+            }
+        }
+    }
+}

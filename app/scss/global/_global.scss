@@ -1,5 +1,14 @@
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #6562ff;
+    height: 100vh;
+    user-select: none;
 }
 .img-responsive {
     width: 100%;
